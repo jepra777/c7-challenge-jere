@@ -1,0 +1,19 @@
+{
+  "name": "c7-challenge-jere",
+  "version": "1.0.0",
+  "description": "Jere C7 Binar Challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jepra777/c7-challenge-jere.git"
+  },
+  "author": "Jeremiah Prasetyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jepra777/c7-challenge-jere/issues"
+  },
+  "homepage": "https://github.com/jepra777/c7-challenge-jere#readme"
+}

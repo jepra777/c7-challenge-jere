@@ -19,13 +19,7 @@ module.exports = (sequelize, DataTypes) => {
     lName: DataTypes.STRING,
     bPlace: DataTypes.STRING,
     bDate: DataTypes.DATEONLY,
-    gender: {
-      types: DataTypes.ENUM,
-      values: ["Male", "Female", "null"],
-      validate: {
-        isIn: [["Male", "Female", "null"]]
-      }
-    }
+    gender: DataTypes.STRING, 
   }, {
     sequelize,
     modelName: 'UserProfile',

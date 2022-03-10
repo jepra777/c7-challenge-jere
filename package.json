@@ -15,5 +15,20 @@
   "bugs": {
     "url": "https://github.com/jepra777/c7-challenge-jere/issues"
   },
-  "homepage": "https://github.com/jepra777/c7-challenge-jere#readme"
+  "homepage": "https://github.com/jepra777/c7-challenge-jere#readme",
+  "dependencies": {
+    "@hapi/boom": "^9.1.4",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "sequelize": "^6.17.0"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.4.1"
+  }
 }

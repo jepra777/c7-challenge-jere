@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/meta.ejs') %>
+    <title>Profile - Add</title>
+    <!-- My CSS Source Start -->
+    <link rel="stylesheet" href="/form.css" />
+    <!-- My CSS Source End -->
+  </head>
+  <body>
+    <div class="signup-section" id="2">
+      <div class="signup-row">
+        <!-- Menu Section -->
+        <div class="signup-text">
+          <h1>Add User</h1>
+          <h3> <a class="head_a"href="/dashboard">Dashboard</a> </h3>
+          <h3> <a class="head_a"href="/profile">Profile</a> </h3>
+          <h3> <a class="head_a"href="/gamehistories">Game Histories</a></h3>
+        </div>
+        <!-- Form Section -->
+        <div class="signup-form padding-general">
+          <form action="/profile/add" method="POST">
+            <div class="row mb-3">
+              <div class="col">
+                <label class="sub-text ">Username</label>
+                <input class="form-control" type="text", name="username"><br>
+              </div>
+              <div class="col">
+                <label class="sub-text">Email</label>
+                <input class="form-control" type="email", name="email"><br>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col">
+                <label class="sub-text">Role</label>
+                <select class="form-control"name="role"> 
+                  <option value=1>Admin</option>
+                  <option value=2>User</option>
+                </select><br>
+              </div>
+              <div class="col">
+                <label class="sub-text">Password</label>
+                <input class="form-control" name="password" type="password"><br/>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col">
+                <button type="submit" class="btn btn-success btn-lg">
+                  Submit
+                </button>
+                <a class="btn btn-warning btn-lg" href="/profile" role="button"
+                >Cancel</a
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    </form>
+  </body>
+</html>

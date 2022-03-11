@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/meta.ejs') %>
+  <title>Profile - Edit</title>
+  <!-- My CSS Source Start -->
+  <link rel="stylesheet" href="/form.css" />
+  <!-- My CSS Source End -->
+</head>
+<body>
+  <div class="signup-section" id="2">
+    <div class="signup-row">
+      <!-- Menu Section -->
+      <div class="signup-text">
+        <h1>Edit Profile</h1>
+        <h3> <a class="head_a"href="/dashboard">Dashboard</a> </h3>
+        <h3> <a class="head_a"href="/profile">Profile</a> </h3>
+        <h3> <a class="head_a"href="/gamehistories">Game Histories</a></h3>
+      </div>
+      <!-- Form Section -->
+      <div class="signup-form">
+        <form action="/profile/<%= data[0].id %>/profile" method="POST">
+          <div class="row mb-3">
+            <div class="col">
+              <label class="sub-text ">Fist Name</label>
+              <input class="form-control" type="text", name="firstName" value=<%=data[0].fName%>><br>
+            </div>
+            <div class="col">
+              <label class="sub-text">Last Name</label>
+              <input class="form-control" type="text", name="lastName" value=<%=data[0].lName%>><br>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <label class="sub-text">Birthplace</label>
+              <input class="form-control" type="text", name="birthPlace" value=<%=data[0].bPlace%>><br>
+            </div>
+            <div class="col">
+              <label class="sub-text">Birthdate</label>
+              <input class="form-control" name="birthDate" type="date" value=<%=data[0].bDate%>><br/>
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="sub-text">Gender</label>
+            <select class="form-control"name="gender">
+              <option value=<%=data[0].gender%> selected=<%=data[0].gender%>>
+                <% if(data[0].gender == "Male") { %>
+                  Male
+               <%}else{ %>
+                  Female
+               <%}%>
+              </option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select><br>
+          </div>
+          <div class="row mb-3">
+            <div class="col">
+              <button type="submit" class="btn btn-success btn-lg">
+                Submit
+              </button>
+              <a class="btn btn-warning btn-lg" href="/profile" role="button"
+              >Cancel</a
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </form>
+</body>
+</html>

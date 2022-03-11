@@ -2,6 +2,22 @@ const { UserGameHistory, User } = require('../models')
 
 class UserGameHistoryController {
 
+    static viewAll(req, res) {
+        UserGameHistory.findAll({
+          order: [["UserId", 'ASC']],
+          include: [{
+            model: User,
+            required: true
+           }]
+        })
+          .then((data) => {
+            res.render("gamehistories", { data })
+          })
+          .catch((error) => {
+            console.log(error)
+          })
+      }
+
     static addGamehistories = async (req, res, next) => {    
         try {
             const { status } = req.body

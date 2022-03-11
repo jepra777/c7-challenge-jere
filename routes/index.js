@@ -9,8 +9,8 @@ router.get("/", (req, res) => {
 })
 
 router.use('/auth', authRouter)
-//router.use('/dashboard', dashboardRouter)
+router.use('/dashboard', dashboardRouter)
 router.use('/profile', profileRouter)
-router.use('/game', gameRouter)
+router.use('/gamehistories', gameRouter)
 
 module.exports = router

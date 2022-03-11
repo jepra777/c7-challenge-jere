@@ -19,8 +19,9 @@
         <div class="signup-text">
           <h1>Dashboard</h1>
           <h3> <a class="head_a"href="/dashboard">Dashboard</a> </h3>
-          <h3> <a class="head_a"href="/users">Users Management</a> </h3>
+          <h3> <a class="head_a"href="/profile">Profile</a> </h3>
           <h3> <a class="head_a"href="/gamehistories">Game Histories</a></h3>
+          <h3> <a class="head_a"href="/game">Play Game</a></h3>
         </div>
         <!-- Form Section -->
 
@@ -29,21 +30,37 @@
         <div class="position-card card text-dark bg-warning mb-3" style="height:10rem; width: 12rem;">
           <div class="card-header" style="font-weight: bold;">Total Users</div>
           <div class="card-body" style="text-align: center;">
-            <h1 style="text-decoration: none; color: black !important;"><%= usersCount %> </h2>
+            <h1 style="text-decoration: none; color: black !important;"><%= userCount %> </h1>
           </div>
         </div>
+
+        <% 
+          let dataWin=0
+          for (let i = 0; i < data.length; i++)
+          { 
+            dataWin=data[i].UserGameHistory.win+dataWin
+          }
+        %>
 
         <div class="position-card2 card text-dark bg-success mb-3" style="height:10rem; width: 12rem;">
           <div class="card-header" style="font-weight: bold;">Users Won</div>
           <div class="card-body" style="text-align: center;">
-            <h1 style="text-decoration: none; color: black !important;"><%= usersWon %> </h2>
+            <h1 style="text-decoration: none; color: black !important;"> <%= dataWin %> </h1>
           </div>
         </div>
+
+        <% 
+        let dataCom=0
+        for (let i = 0; i < data.length; i++)
+        { 
+          dataCom=data[i].UserGameHistory.com+dataCom
+        }
+        %>
 
         <div class="position-card3 card text-dark bg-danger mb-3" style="height:10rem; width: 12rem;">
           <div class="card-header" style="font-weight: bold;">Computer Won</div>
           <div class="card-body" style="text-align: center;">
-            <h1 style="text-decoration: none; color: black !important;"><%= usersLose %> </h2>
+            <h1 style="text-decoration: none; color: black !important;"><%= dataCom %> </h1>
           </div>
         </div>
 

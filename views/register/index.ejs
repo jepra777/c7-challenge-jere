@@ -12,15 +12,11 @@
       <div class="signup-row">
         <!-- Menu Section -->
         <div class="signup-text">
-          <h1>Add User</h1>
-          <h3> <a class="head_a"href="/dashboard">Dashboard</a> </h3>
-          <h3> <a class="head_a"href="/profile">Profile</a> </h3>
-          <h3> <a class="head_a"href="/gamehistories">Game Histories</a></h3>
-          <h3> <a class="head_a"href="/game">Play Game</a></h3>
+          <h1>Register</h1>
         </div>
         <!-- Form Section -->
         <div class="signup-form padding-general">
-          <form action="/profile/add" method="POST">
+          <form action="/register/add" method="POST">
             <div class="row mb-3">
               <div class="col">
                 <label class="sub-text ">Username</label>
@@ -35,8 +31,7 @@
               <div class="col">
                 <label class="sub-text">Role</label>
                 <select class="form-control"name="role"> 
-                  <option value=1>Admin</option>
-                  <option value=2>User</option>
+                  <option value=2>Player</option>
                 </select><br>
               </div>
               <div class="col">
@@ -49,7 +44,7 @@
                 <button type="submit" class="btn btn-success btn-lg">
                   Submit
                 </button>
-                <a class="btn btn-warning btn-lg" href="/profile" role="button"
+                <a class="btn btn-warning btn-lg" href="/" role="button"
                 >Cancel</a
                 >
               </div>

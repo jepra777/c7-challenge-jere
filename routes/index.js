@@ -3,6 +3,7 @@ const dashboardRouter = require('./dashboardRouter')
 const profileRouter = require('./profileRouter')
 const gameRouter = require('./gameRouter')
 const playGameRouter = require('./playGameRouter')
+const registerRouter = require('./registerRouter')
 const router = require('express').Router()
 
 router.get("/", (req, res) => {
@@ -14,5 +15,6 @@ router.use('/dashboard', dashboardRouter)
 router.use('/profile', profileRouter)
 router.use('/gamehistories', gameRouter)
 router.use('/game', playGameRouter)
+router.use('/register', registerRouter)
 
 module.exports = router

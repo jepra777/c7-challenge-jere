@@ -2,21 +2,59 @@ const { UserGameHistory, User } = require('../models')
 
 class UserGameHistoryController {
 
-    static viewAll(req, res) {
-        UserGameHistory.findAll({
-          order: [["UserId", 'ASC']],
-          include: [{
-            model: User,
-            required: true
-           }]
-        })
-          .then((data) => {
-            res.render("gamehistories", { data })
+    static viewAll = async (req, res, next) => {
+        // ambil userid dari cookies
+        const { UserId } = req.cookies
+    
+        // ambil dari req.user yang diselipin dari authentikasi
+        const userIdDariReqUser = req.cookies.UserId
+        const userStatus = req.cookies.role
+    
+        try {
+          if ( userStatus === "1" ){
+            const data = await UserGameHistory.findAll({
+                order: [["UserId", 'ASC']],
+                      include: [{
+                        model: User,
+                        required: true
+                       }]
+            })
+              //res.status(200).json({ userProfile })
+              res.render("gamehistories", { data })
+          }else{
+          //res.status(200).json({ message: "Anda Bukan Super Admin" })
+            const data = await UserGameHistory.findAll({
+            where: {
+              id: userIdDariReqUser
+            },
+            order: [["UserId", 'ASC']],
+            include: [{
+              model: User,
+              required: true
+             }]
           })
-          .catch((error) => {
-            console.log(error)
-          })
+          //res.status(200).json({ userProfile })
+          res.render("gamehistories", { data })
+          }
+        } catch (error) {
+          res.status(500).json(error)
+        }
       }
+    // static viewAll(req, res) {
+    //     UserGameHistory.findAll({
+    //       order: [["UserId", 'ASC']],
+    //       include: [{
+    //         model: User,
+    //         required: true
+    //        }]
+    //     })
+    //       .then((data) => {
+    //         res.render("gamehistories", { data })
+    //       })
+    //       .catch((error) => {
+    //         console.log(error)
+    //       })
+    //   }
 
     static addGamehistories = async (req, res, next) => {    
         try {

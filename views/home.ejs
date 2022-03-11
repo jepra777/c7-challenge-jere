@@ -1,12 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hi, There! Halaman Home Nih ^_^</h1>
-</body>
-</html> 
+  <head>
+    <%- include('./partials/meta.ejs') %>
+    <title>JePra Game - Login</title>
+
+    <!-- My CSS Source Start -->
+    <link rel="stylesheet" href="/login.css" />
+    <!-- My CSS Source End -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <!-- Home Section Start -->
+    <div class="login-section">
+      <!-- Login Content Start -->
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-6 col-md-4">
+            <form class="form-container" action="/auth/login/" method="post">
+              <h3 class="">Hi, Welcome Back!</h3>
+              <div class="mb-3">
+                <label class="sub-text">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="username"
+                  placeholder="Username"
+                />
+              </div>
+              <div class="mb-3">
+                <label class="sub-text">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  name="password"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="row mb-3">
+                <div class="col">
+                  <button type="submit" class="btn btn-success">Login</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Login Content End-->
+    </div>
+    <!-- Login Section End -->
+  </body>
+</html>
+
+<script>
+  let urlParams = new URLSearchParams(window.location.search)
+  if (urlParams.has('wrongusername')){
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Username not Registered!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }else if (urlParams.has('wrongpassword')){
+    Swal.fire({
+      position: 'center',
+      icon: 'error',
+      title: 'Password wrong!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+  }
+</script>

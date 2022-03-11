@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/meta.ejs') %>
+    <title>Dashboard</title>
+    <!-- My CSS Source Start -->
+    <link rel="stylesheet" href="/form.css" />
+    <!-- My CSS Source End -->
+
+    <script
+    src="https://www.gstatic.com/charts/loader.js">
+    </script>
+  </head>
+  <body>
+    
+    <div class="signup-section" id="2">
+      <div class="signup-row">
+        <!-- Menu Section -->
+        <div class="signup-text">
+          <h1>Dashboard</h1>
+          <h3> <a class="head_a"href="/dashboard">Dashboard</a> </h3>
+          <h3> <a class="head_a"href="/users">Users Management</a> </h3>
+          <h3> <a class="head_a"href="/gamehistories">Game Histories</a></h3>
+        </div>
+        <!-- Form Section -->
+
+        <h2 class="position-head">Users Monitor</h2>
+
+        <div class="position-card card text-dark bg-warning mb-3" style="height:10rem; width: 12rem;">
+          <div class="card-header" style="font-weight: bold;">Total Users</div>
+          <div class="card-body" style="text-align: center;">
+            <h1 style="text-decoration: none; color: black !important;"><%= usersCount %> </h2>
+          </div>
+        </div>
+
+        <div class="position-card2 card text-dark bg-success mb-3" style="height:10rem; width: 12rem;">
+          <div class="card-header" style="font-weight: bold;">Users Won</div>
+          <div class="card-body" style="text-align: center;">
+            <h1 style="text-decoration: none; color: black !important;"><%= usersWon %> </h2>
+          </div>
+        </div>
+
+        <div class="position-card3 card text-dark bg-danger mb-3" style="height:10rem; width: 12rem;">
+          <div class="card-header" style="font-weight: bold;">Computer Won</div>
+          <div class="card-body" style="text-align: center;">
+            <h1 style="text-decoration: none; color: black !important;"><%= usersLose %> </h2>
+          </div>
+        </div>
+
+        <h2 class="position-head2">Latest Users</h2>
+
+        <div class="my-custom-scrollbar3 table-wrapper-scroll-y">
+          <table class="table table-dark table-hover">
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">Username</th>
+              <th scope="col">Role</th>
+            </tr>
+            <% for (let i = 0; i < data.length; i++){ %>
+            <tr>
+              <td><%= i+1 %></td>
+              <td><%= data[i].username %></td>
+              <td>
+                <% if(data[i].role == 1) { %>
+                    Admin
+                <%}else{ %>
+                    User
+                <%}%>
+              </td>
+            </tr>
+            <% } %>
+            
+          </table>
+        </div>
+      </div>
+    </div>
+
+      </div>
+    </div>
+  </body>
+</html>

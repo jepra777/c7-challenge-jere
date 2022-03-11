@@ -57,9 +57,19 @@ class AuthController {
                 username: username
                 }
             })
-            if (!user) return res.status(404).json({ message: "User not found" })
+
+            if (!user) {
+                return res.status(404).redirect('/?wrongusername')
+                //return res.status(404).json({ message: "User not found" })
+            }
+
             const isPasswordMatch = await verifyPassword(password, user.password)
-            if (!isPasswordMatch) return res.status(409).json({ message: "Password salah" })
+
+            if (!isPasswordMatch) {
+                return res.status(404).redirect('/?wrongpassword')
+                //return res.status(409).json({ message: "Password salah" })
+            }
+
             const access_token = await generateToken({
                 id: user.id,
                 email: user.email,
@@ -75,11 +85,13 @@ class AuthController {
                 httpOnly: true
             })
             
-            return res.status(200).json({
-                id: user.id,
-                username: user.username,
-                message: `user ${username}, berhasil login`
-            })
+            // return res.status(200).json({
+            //     id: user.id,
+            //     username: user.username,
+            //     message: `user ${username}, berhasil login`
+            // })
+
+            return res.status(200).redirect("/dashboard")
         } catch (error) {
             return res.status(500).json({ message: error })
         }

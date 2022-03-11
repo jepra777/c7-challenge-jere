@@ -20,8 +20,8 @@ class UserGameHistoryController {
 
     static addGamehistories = async (req, res, next) => {    
         try {
-            const { status } = req.body
-            let gameStatus=status
+            const stat = req.params.status
+            let gameStatus=stat
             let dataCom=0
             let dataLose=0
             let dataWin=0
@@ -42,7 +42,8 @@ class UserGameHistoryController {
                 }
                 const game = await UserGameHistory.create(payloadGame)
 
-                return res.status(409).json({ message: game })
+                //return res.status(409).json({ message: game })
+                res.redirect('/game')
 
             }
             else{
@@ -55,7 +56,8 @@ class UserGameHistoryController {
                     }
                 })
 
-                return res.status(409).json({ updateGameHistory })
+                //return res.status(409).json({ updateGameHistory })
+                res.redirect('/game')
             } 
         } catch (error) {
             return res.status(500).json({ message: error })

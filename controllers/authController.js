@@ -40,7 +40,7 @@ class AuthController {
                   profile
                 })
               }
-              
+
             } else if (!user) {
               res.status(400).json({ message: "bad request" })
             }
@@ -51,23 +51,10 @@ class AuthController {
 
     static login = async (req, res, next) => {
         try {
-            const { usernameORemail, password } = req.body
+            const { username, password } = req.body
             const user = await User.findOne({
                 where: {
-                    $or: [
-                        {
-                            Username: 
-                            {
-                                $eq: usernameORemail
-                            }
-                        }, 
-                        {
-                            Email: 
-                            {
-                                $eq: usernameORemail
-                            }
-                        }
-                    ]
+                username: username
                 }
             })
             if (!user) return res.status(404).json({ message: "User not found" })
@@ -75,6 +62,7 @@ class AuthController {
             if (!isPasswordMatch) return res.status(409).json({ message: "Password salah" })
             const access_token = await generateToken({
                 id: user.id,
+                email: user.email,
                 role: user.role
             })
             res.cookie("UserId", user.id, {
@@ -83,6 +71,10 @@ class AuthController {
             res.cookie("access_token", access_token, {
                 httpOnly: true
             })
+            res.cookie("role", user.role, {
+                httpOnly: true
+            })
+            
             return res.status(200).json({
                 id: user.id,
                 username: user.username,

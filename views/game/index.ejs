@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/meta') %>
+
+    <title>Dulinan Gunting Batu Kertas</title>
+
+    <!-- My CSS Source Start -->
+    <link rel="stylesheet" href="./game.css" />
+    <!-- My CSS Source End -->
+
+    <!-- My JS Source Start -->
+    <script src="./js/game.js"></script>
+    <!-- My JS Source End -->
+   
+</head>
+<body>
+   <!-- Header Section Start -->
+  <nav class="navbar">
+    <div class="navbar-item">
+      <a class="back" href="/dashboard">
+        <img src="./images/back.png" alt="" width="30" height="30" class="">
+      </a>
+      <a class="logo" href="#">
+        <img src="./images/logo.png" alt="" width="60" height="60" class="">
+      </a>
+      <a href="#">
+        Dulinan Gunting Batu Kertas
+      </a>
+    </div>
+  </nav>
+  <!-- Header Section End -->
+
+  <!-- Game Board Section Start -->
+  <div class="container">
+    <div class="row justify-content-center">
+     
+      <!-- Player1 Section Start -->
+      <div class="col-3">
+        <div class="text-center" style="width: 15rem;">
+          <div class="card-body">
+            <p>Player 1</p>
+            
+            <div onclick="who(1)" class="card-body button-hover button1" style="padding-left:52px;">
+              <div style="width: 6.5rem; height: 6.5rem;">
+                <div class="card-body">
+                   <img  src="./images/gunting.png" alt="" class="" style="width:75%; padding-top:5px">   
+                </div>
+              </div>
+            </div>
+
+            <div onclick="who(2)" class="card-body button-hover button2" style="padding-left:52px;">
+              <div style="width: 6.5rem; height: 6.5rem;">
+                <div class="card-body">
+                   <img src="./images/batu.png" alt="" class="" style="width:75%; padding-top:18px"> 
+                </div>
+              </div>
+            </div>
+
+            <div onclick="who(3)" class="card-body button-hover button3" style="padding-left:52px;">
+              <div style="width: 6.5rem; height: 6.5rem;">
+                <div class="card-body">
+                   <img src="./images/kertas.png" alt="" class="" style="width:75%; padding-top:2px"> 
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- Player1 Section End -->
+      
+      <!-- Status Section Start -->
+      <div class="text-center" style="width: 15rem;">      
+        <div class="card-body" style="padding-top: 175px; padding-right:10px">
+            <div class="" style="width: 10rem; height: 10rem;">
+               
+
+                <div class="centerStatus offVs">
+                  <p>VS</p> 
+                </div>
+              
+                <div class="centerStatus showPlayerwin">
+                  <p style="background-color: green; transform:rotate(-20deg); width: 150px; height: 100px; border-radius: 15px;"><br>Player 1<br>Win</p> 
+                </div>
+
+                <div class="centerStatus showDraw">
+                  <p style="background-color: rgb(0, 90, 0); transform:rotate(-20deg); width: 150px; height: 100px; border-radius: 15px;"><br>Draw</p> 
+                </div>
+                
+                <div class="centerStatus showComwin">
+                  <p style="background-color: green; transform:rotate(-20deg); width: 150px; height: 100px; border-radius: 15px;"><br>Com<br>Win</p> 
+                </div>
+
+            </div>
+        </div>
+      </div>
+      <!-- Status Section End --> 
+
+      <!-- Computer Section Start -->
+      <div class="col-3">
+        <div class="text-center" style="width: 15rem;">
+          <div class="card-body">
+            <p>Computer</p>
+            
+            <div class="card-body button4" style="padding-left:52px;">
+              <div style="width: 6.5rem; height: 6.5rem;">
+                <div class="card-body">
+                   <img src="./images/gunting.png" alt="" class="" style="width:75%; padding-top:5px">   
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body button5" style="padding-left:52px;">
+              <div style="width: 6.5rem; height: 6.5rem;">
+                <div class="card-body">
+                   <img src="./images/batu.png" alt="" class="" style="width:75%; padding-top:18px"> 
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body button6" style="padding-left:52px;">
+              <div style="width: 6.5rem; height: 6.5rem;">
+                <div class="card-body">
+                   <img src="./images/kertas.png" alt="" class="" style="width:75%;; padding-top:2px"> 
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- Computer Section End -->
+    </div>
+
+    <div class="row justify-content-center">
+     
+      <!-- Refresh Section Start -->
+      <div class="col-3">
+        <div class="text-center" style="width: 15rem;">
+        
+            <div class="card-body" style="padding-left:100px;">
+              <div class="" style="width: 3rem; height: 3rem;">
+                 <img  onclick="refresh()" src="./images/refresh.png" alt="" class="" style="width:100%;"> 
+              </div>
+            </div>
+
+        </div>
+      </div>
+      <!-- Refresh Section End -->
+      
+    </div>
+  </div>
+  <!-- Game Board Section End -->
+</body>
+</html>

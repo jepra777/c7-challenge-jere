@@ -1,0 +1,34 @@
+/* Reset Page Function for Body & HTML */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+  /* Home Section Settings*/
+.login-section {
+    background-image: url("./images/main-bg.jpg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    height: 650px;
+    position: relative;
+  }
+  
+.container-fluid{
+    padding-top: 175px
+}
+
+  .form-container {
+    background: rgba(0,0,0,.5);;
+    color: white;
+    border-radius: 10px;
+    padding: 30px;
+  }
+  
+  .main-content h3 {
+    letter-spacing: 0.1em;
+  }
+  

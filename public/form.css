@@ -1,0 +1,163 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+/* Font Settings Function */
+h1 {
+  font-family: "Bebas Neue";
+  font-weight: bold;
+  font-size: 60px;
+  color: white!important;
+  text-decoration: underline;
+}
+
+.head_a{
+  text-decoration: none;
+  color: orange !important;
+}
+
+.head_a:hover{
+  color: white !important;
+}
+
+h2 {
+  font-family: "Bebas Neue";
+  font-weight: bold;
+  font-size: 36px;
+  color: orange !important;
+}
+
+h3 {
+  font-family: "Bebas Neue";
+  font-size: 24px;
+  color: orange !important;
+}
+
+body {
+  font-family: "Open Sans";
+  font-size: 18px;
+}
+
+.sub-text {
+  font-family: "Open Sans";
+  font-size: 18px;
+  color: white !important;
+}
+
+.button-text {
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 16px;
+    color: #000000 !important;
+  }
+
+.navigation {
+  font-family: "Open Sans";
+  font-weight: bold;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+
+/* Sign Up Section Settings */
+
+.signup-section {
+    margin-top: -0.6px;
+    background-image: url("/images/the-games-bg.jpg");
+    background-size: 100% 100%;
+    object-fit: contain;
+    height: 650px;
+    position: relative;
+  }
+  
+  .signup-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .signup-text {
+    flex: 40%;
+    padding-top: 225px;
+    padding-left: 100px;
+  }
+  
+  .signup-form {
+    flex: 60%;
+    padding-top: 125px;
+    padding-right: 150px;
+  }
+
+  .my-custom-scrollbar {
+    position: fixed;
+    margin-top: 75px;
+    margin-left: 550px;
+    height: 475px;
+    overflow: auto;
+    text-align: center;
+    border-radius: 7.5px;
+  }
+
+  .my-custom-scrollbar2 {
+    position: fixed;
+    margin-top: 95px;
+    margin-left: 700px;
+    height: 425px;
+    overflow: auto;
+    text-align: center;
+    border-radius: 7.5px;
+  }
+
+  .table-wrapper-scroll-y {
+    display: block;
+  }
+
+  .adduser-button{
+    position: fixed;
+    margin-top: 575px;
+    margin-left: 650px;
+  }
+
+  .padding-general{
+    margin-top: 50px
+  }
+
+  .position-card{
+    position: fixed;
+    margin-top: 125px;
+    margin-left: 525px;
+  }
+
+  .position-card2{
+    position: fixed;
+    margin-top: 125px;
+    margin-left: 750px;
+  }
+  
+  .position-card3{
+    position: fixed;
+    margin-top: 125px;
+    margin-left: 975px;
+  }
+
+  .my-custom-scrollbar3{
+    position: fixed;
+    margin-top: 400px;
+    margin-left: 745px;
+    height: 180px;
+    text-align: center;
+  }
+
+  .position-head{
+    position: fixed;
+    margin-top: 50px;
+    margin-left: 760px;
+  }
+
+  .position-head2{
+    position: fixed;
+    margin-top: 325px;
+    margin-left: 775px;
+  }

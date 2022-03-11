@@ -1,0 +1,68 @@
+/* Reset Page Function for Body & HTML */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(156, 131, 95);
+}
+
+/* Global CSS */
+p{
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+.offVs p{
+  display: block;
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 100px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: maroon;
+}
+
+/* Navbar CSS */
+.navbar-item{
+  float: left;
+  padding-top: 10px;
+}
+
+.navbar-item .back, .logo{
+  padding: 15px;
+}
+
+.navbar-item a{
+  font-family: 'Open Sans';
+  font-weight: bold;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: orange !important;
+}
+
+/* Game Board CSS */
+.button-hover:hover{
+  background-color:seashell;
+  border-radius: 10px;
+}
+
+.centerStatus p{
+  vertical-align: middle;
+}
+
+.card-body .showPlayerwin{
+  display: none;
+}
+
+.card-body .showComwin{
+  display: none;
+}
+
+.card-body .showDraw{
+  display: none;
+}
